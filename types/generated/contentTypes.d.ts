@@ -362,6 +362,41 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
+export interface ApiAdvertismentAdvertisment extends Schema.CollectionType {
+  collectionName: 'advertisments';
+  info: {
+    singularName: 'advertisment';
+    pluralName: 'advertisments';
+    displayName: 'advertisement';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    status: Attribute.Enumeration<['Active', 'Inactive']>;
+    artwork: Attribute.Media;
+    name: Attribute.String;
+    impressions: Attribute.Integer;
+    clicks: Attribute.Integer;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::advertisment.advertisment',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::advertisment.advertisment',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiCampaignCampaign extends Schema.CollectionType {
   collectionName: 'campaigns';
   info: {
@@ -830,6 +865,7 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
+      'api::advertisment.advertisment': ApiAdvertismentAdvertisment;
       'api::campaign.campaign': ApiCampaignCampaign;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
