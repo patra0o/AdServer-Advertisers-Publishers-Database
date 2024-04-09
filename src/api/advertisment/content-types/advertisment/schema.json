@@ -38,6 +38,9 @@
     },
     "clicks": {
       "type": "integer"
+    },
+    "conversions": {
+      "type": "integer"
     }
   }
 }
