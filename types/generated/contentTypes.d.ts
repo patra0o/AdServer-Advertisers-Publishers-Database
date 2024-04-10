@@ -806,6 +806,11 @@ export interface ApiAdvertismentAdvertisment extends Schema.CollectionType {
     impressions: Attribute.Integer;
     clicks: Attribute.Integer;
     conversions: Attribute.Integer;
+    campaign: Attribute.Relation<
+      'api::advertisment.advertisment',
+      'manyToOne',
+      'api::campaign.campaign'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -830,6 +835,7 @@ export interface ApiCampaignCampaign extends Schema.CollectionType {
     singularName: 'campaign';
     pluralName: 'campaigns';
     displayName: 'campaign';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -838,6 +844,17 @@ export interface ApiCampaignCampaign extends Schema.CollectionType {
     name: Attribute.String;
     start: Attribute.Date;
     end: Attribute.Date;
+    description: Attribute.Text;
+    targetAudience: Attribute.String;
+    budget: Attribute.Integer;
+    targetDevices: Attribute.Text;
+    geographicTargeting: Attribute.Text;
+    campaignStatus: Attribute.String;
+    advertisements: Attribute.Relation<
+      'api::campaign.campaign',
+      'oneToMany',
+      'api::advertisment.advertisment'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

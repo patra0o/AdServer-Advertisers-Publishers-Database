@@ -41,6 +41,12 @@
     },
     "conversions": {
       "type": "integer"
+    },
+    "campaign": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::campaign.campaign",
+      "inversedBy": "advertisements"
     }
   }
 }

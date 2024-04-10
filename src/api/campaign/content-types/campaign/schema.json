@@ -4,7 +4,8 @@
   "info": {
     "singularName": "campaign",
     "pluralName": "campaigns",
-    "displayName": "campaign"
+    "displayName": "campaign",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -19,6 +20,30 @@
     },
     "end": {
       "type": "date"
+    },
+    "description": {
+      "type": "text"
+    },
+    "targetAudience": {
+      "type": "string"
+    },
+    "budget": {
+      "type": "integer"
+    },
+    "targetDevices": {
+      "type": "text"
+    },
+    "geographicTargeting": {
+      "type": "text"
+    },
+    "campaignStatus": {
+      "type": "string"
+    },
+    "advertisements": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::advertisment.advertisment",
+      "mappedBy": "campaign"
     }
   }
 }
