@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ad_events",
+  "info": {
+    "singularName": "ad-event",
+    "pluralName": "ad-events",
+    "displayName": "Ad Event",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "eventType": {
+      "type": "string"
+    },
+    "browser": {
+      "type": "string"
+    },
+    "screenSize": {
+      "type": "string"
+    },
+    "timestamp": {
+      "type": "string"
+    },
+    "country": {
+      "type": "string"
+    },
+    "region": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "eventCounts": {
+      "type": "string"
+    },
+    "device": {
+      "type": "string"
+    },
+    "advertisement": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::advertisment.advertisment",
+      "inversedBy": "ad_events"
+    }
+  }
+}
