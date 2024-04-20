@@ -19,17 +19,6 @@
         "Inactive"
       ]
     },
-    "artwork": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
-    },
     "name": {
       "type": "string"
     },
@@ -47,6 +36,15 @@
       "relation": "manyToOne",
       "target": "api::campaign.campaign",
       "inversedBy": "advertisements"
+    },
+    "description": {
+      "type": "text"
+    },
+    "adSize": {
+      "type": "string"
+    },
+    "artwork": {
+      "type": "string"
     }
   }
 }

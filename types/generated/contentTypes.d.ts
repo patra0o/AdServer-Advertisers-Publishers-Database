@@ -375,7 +375,6 @@ export interface ApiAdvertismentAdvertisment extends Schema.CollectionType {
   };
   attributes: {
     status: Attribute.Enumeration<['Active', 'Inactive']>;
-    artwork: Attribute.Media;
     name: Attribute.String;
     impressions: Attribute.Integer;
     clicks: Attribute.Integer;
@@ -385,6 +384,9 @@ export interface ApiAdvertismentAdvertisment extends Schema.CollectionType {
       'manyToOne',
       'api::campaign.campaign'
     >;
+    description: Attribute.Text;
+    adSize: Attribute.String;
+    artwork: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
