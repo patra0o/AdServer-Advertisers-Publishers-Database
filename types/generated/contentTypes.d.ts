@@ -388,6 +388,7 @@ export interface ApiAdEventAdEvent extends Schema.CollectionType {
       'manyToOne',
       'api::advertisment.advertisment'
     >;
+    adId: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

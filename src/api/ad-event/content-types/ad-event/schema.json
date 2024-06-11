@@ -44,6 +44,9 @@
       "relation": "manyToOne",
       "target": "api::advertisment.advertisment",
       "inversedBy": "ad_events"
+    },
+    "adId": {
+      "type": "string"
     }
   }
 }
